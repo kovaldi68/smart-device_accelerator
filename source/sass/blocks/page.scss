@@ -1,0 +1,22 @@
+.page {
+  height: 100%;
+  font-family: $main-font;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 22px;
+}
+
+.page-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 320px;
+  min-height: 100%;
+  margin: 0;
+  align-content: flex-start;
+
+  &--menu-opened {
+    overflow-y: hidden;
+  }
+}

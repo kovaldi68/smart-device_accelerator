@@ -1,0 +1,16 @@
+.button {
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 40px;
+  background-color: $blue-main;
+  border-style: none;
+  border-radius: 0;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: $white-basic;
+}

@@ -1,3 +1,15 @@
-h1 {
-  color: red;
-}
+// general
+
+@import '../sass/general/normalize.scss';
+@import '../sass/general/fonts.scss';
+@import '../sass/general/variables.scss';
+@import '../sass/general/mixin.scss';
+@import '../sass/general/global.scss';
+@import '../sass/general/z-indexes.scss';
+
+// blocks
+
+@import '../sass/blocks/button.scss';
+@import '../sass/blocks/container.scss';
+@import '../sass/blocks/visually-hidden.scss';
+@import '../sass/blocks/page.scss';
