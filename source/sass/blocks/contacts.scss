@@ -1,0 +1,23 @@
+.page-footer__contacts {
+  h3 {
+    margin: 0;
+    margin-bottom: 29px;
+    font-family: $roboto-font;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 16px;
+    color: $black-decor;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+}
+
+.contacts__list {
+  @include list-reset;
+}
+
+.contacts__item {
+  font-size: 15px;
+  line-height: 25px;
+  color: $black-decor-opacity-50;
+}

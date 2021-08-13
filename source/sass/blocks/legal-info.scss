@@ -1,0 +1,38 @@
+.legal-info {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  font-size: 13px;
+  line-height: 24px;
+  letter-spacing: 0.04em;
+  color: $black-decor-opacity-50;
+  text-transform: uppercase;
+
+  p {
+    margin: 0;
+  }
+}
+
+.legal-info__conditions {
+  color: $black-decor-opacity-50;
+}
+
+@media (max-width: $tablet-width-max) {
+  .legal-info {
+    padding-top: 21px;
+    padding-bottom: 21px;
+
+    p {
+      position: absolute;
+      top: 17px;
+      left: 45%;
+    }
+  }
+
+  .legal-info__rights {
+    display: none;
+  }
+}

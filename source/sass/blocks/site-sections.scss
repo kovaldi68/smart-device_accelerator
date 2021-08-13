@@ -1,0 +1,38 @@
+.site-sections {
+  display: flex;
+  flex-wrap: wrap;
+
+  h3 {
+    margin: 0;
+    margin-bottom: 29px;
+    width: 100%;
+    font-family: $roboto-font;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 16px;
+    color: $black-decor;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+}
+
+.site-sections__list {
+  @include list-reset;
+  width: 50%;
+}
+
+.site-sections__item {
+  font-size: 15px;
+  line-height: 25px;
+  color: $black-decor-opacity-50;
+}
+
+@media (max-width: $tablet-width-max) {
+  .site-sections {
+    flex-direction: column;
+  }
+
+  .site-sections__list {
+    width: 100%;
+  }
+}
