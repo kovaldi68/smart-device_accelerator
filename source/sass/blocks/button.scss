@@ -6,11 +6,28 @@
   padding: 30px 40px;
   background-color: $blue-main;
   border-style: none;
-  border-radius: 0;
   cursor: pointer;
   font-weight: 700;
   font-size: 14px;
   line-height: 16px;
   text-transform: uppercase;
   color: $white-basic;
+  border-radius: 5px;
+
+  &--call-back {
+    padding: 14px 10px 13px;
+    min-width: 180px;
+    font-family: $roboto-font;
+    background-color: transparent;
+    border: 1px solid $white-basic;
+    letter-spacing: 0.05em;
+  }
+
+  &--feedback {
+    padding: 19px 10px 17px;
+    min-width: 407px;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.05em;
+  }
 }

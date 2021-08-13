@@ -10,11 +10,12 @@
 .page-body {
   display: flex;
   flex-direction: column;
+  align-content: flex-start;
+  position: relative;
   height: 100%;
+  margin: 0;
   min-width: 320px;
   min-height: 100%;
-  margin: 0;
-  align-content: flex-start;
 
   &--menu-opened {
     overflow-y: hidden;

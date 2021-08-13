@@ -1,13 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class='page' lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Стартовый шаблон</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta name='description' content='Accelerator project: Moon'>
+  <title>Сайт Smart Device: Умные Технологии</title>
+  <link rel='preload' href='fonts/pt-mono-regular.woff2' as='font' type='font/woff2' crossorigin/>
+  <link rel='preload' href='fonts/roboto-condensed-regular.woff2' as='font' type='font/woff2' crossorigin/>
+  <link rel='preload' href='fonts/roboto-condensed-bold.woff2' as='font' type='font/woff2' crossorigin/>
+  <link rel="stylesheet" href="css/style.min.css">
 </head>
-<body>
-  <h1>Добро пожаловать в Лигу А.</h1>
+<body class='page-body'>
+  <header class='page-header'>
+    <div class='page-header__container container'>
+      <a class='page-header__logo'>
+        <picture>
+          <source media='(max-width: 767px)' srcset='img/logo-mobile.png' width='38' height='38'>
+          <img src='img/logo-white.png' alt='Логотип сайта Smart Device' width='202' height='52'>
+        </picture>
+      </a>
+      <ul class='page-header__user-nav user-nav'>
+        <li class='user-nav__item'>
+          <a class='user-nav__link user-nav__link--mail' href='mailto:info@sd.ru' aria-label='Электронная почта компании'>
+            <svg class='user-nav__icon user-nav__icon--mail' width='19' height='14' aria-label='Иконка почты'>
+              <use xlink:href='img/sprite.svg#mail-icon'>
+              </use>
+            </svg>
+            <span>info@sd.ru</span>
+          </a>
+        </li>
+        <li class='user-nav__item'>
+          <a class='user-nav__link user-nav__link--tel' href='tel:+74950005252' aria-label='Номер телефона компании'>
+            <svg class='user-nav__icon user-nav__icon--tel' width='18' height='18' aria-label='Иконка телефона'>
+              <use xlink:href='img/sprite.svg#phone-call-icon'>
+              </use>
+            </svg>
+            <span>+7 (495) 000 52 52</span>
+          </a>
+        </li>
+      </ul>
+      <button class='page-header__button button button--call-back' type='button'>Заказать звонок</button>
+    </div>
+  </header>
+  <main class='page-main'>
+    <section class='page-main__promo promo'>
+      <div class='promo__container container'>
+        <h1>
+          Печатные платы
+        </h1>
+        <p>
+          производство и монтаж, поставка комплектующих, блоков и модулей
+        </p>
+        <button class='promo__button button button--feedback'>
+          <span>Получить бесплатную консультацию</span>
+          <span>Бесплатная консультация</span>
+        </button>
+        <a class='promo__anchor-link' href='#'>Скролл вниз</a>
+      </div>
+    </section>
+  </main>
+  <footer class='page-footer'>
+
+  </footer>
+  <script src='js/main.js'></script>
 </body>
 </html>
