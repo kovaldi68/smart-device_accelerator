@@ -4,6 +4,7 @@
   align-items: center;
   justify-content: center;
   padding: 30px 40px;
+  font-family: $roboto-font;
   background-color: $blue-main;
   border-style: none;
   cursor: pointer;
@@ -17,17 +18,26 @@
   &--call-back {
     padding: 14px 10px 13px;
     min-width: 180px;
-    font-family: $roboto-font;
     background-color: transparent;
     border: 1px solid $white-basic;
     letter-spacing: 0.05em;
   }
 
   &--feedback {
-    padding: 19px 10px 17px;
+    padding: 19px 29px 17px;
     min-width: 407px;
     font-size: 16px;
     line-height: 19px;
     letter-spacing: 0.05em;
+  }
+}
+
+@media (max-width: $tablet-width-max) {
+  .button {
+    &--feedback {
+      padding-left: 14px;
+      padding-right: 14px;
+      min-width: 379px;
+    }
   }
 }
