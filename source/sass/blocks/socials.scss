@@ -18,3 +18,9 @@
     align-items: center;
   }
 }
+
+@media (max-width: $mobile-width-max) {
+  .socials {
+    justify-content: center;
+  }
+}
