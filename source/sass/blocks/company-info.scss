@@ -1,0 +1,26 @@
+.company-info {
+  padding-top: 109px;
+  padding-bottom: 96px;
+  background-image: url('../img/triangle-big.png');
+  background-repeat: no-repeat;
+  background-position: 100px 200px;
+  background-size: 636px 636px;
+}
+
+.company-info__container {
+  max-width: 1230px;
+}
+
+@media (max-width: $tablet-width-max) {
+  .company-info {
+    padding-top: 54px;
+    padding-bottom: 75px;
+  }
+}
+
+@media (max-width: $mobile-width-max) {
+  .company-info {
+    padding-top: 37px;
+    padding-bottom: 65px;
+  }
+}

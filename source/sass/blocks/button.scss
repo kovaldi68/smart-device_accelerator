@@ -30,6 +30,17 @@
     line-height: 19px;
     letter-spacing: 0.05em;
   }
+
+  &--more {
+    padding: 12px 14px;
+    min-width: 180px;
+    font-size: 14px;
+    line-height: 16px;
+    letter-spacing: 0.05em;
+    color: $blue-main;
+    background-color: $white-basic;
+    border: 1px solid $blue-main;
+  }
 }
 
 @media (max-width: $tablet-width-max) {

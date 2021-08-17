@@ -1,8 +1,5 @@
 const accordion = document.querySelector('.menu--accordion');
 
-const ACCORD_TAB_PADDING_TOP = 8;
-const ACCORD_TAB_PADDING_BOTTOM = 23;
-
 function accordionHandler(event) {
   const eventTarget = event.target;
   if(!(eventTarget.classList.contains('menu__title'))) return;

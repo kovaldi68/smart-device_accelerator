@@ -1,24 +1,23 @@
 const accordion = document.querySelector('.menu--accordion');
-accordion.addEventListener('click', accordionHandler);
+
 function accordionHandler(event) {
   const eventTarget = event.target;
-  if(eventTarget.tagName !== 'h3') return;
-  if (eventTarget.classList.contains('title--accord-select')) {
+  if(!(eventTarget.classList.contains('menu__title'))) return;
+  if (eventTarget.classList.contains('menu__title--accord-select')) {
     hideAll();
   } else {
     hideAll();
-    eventTarget.classList.add('title--accord-select');
-    showContent(eventTarget.nextElementSibling);
+    eventTarget.classList.add('menu__title--accord-select');
+    eventTarget.closest('.menu__content').classList.add('menu__content--active');
   }
 }
 
 function hideAll() {
-  const titleElems = accordion.querySelectorAll('h3');
-  const contentElems = accordion.querySelectorAll('div');
-  titleElems.forEach(elem => elem.classList.remove('title--accord-select'));
-  contentElems.forEach(elem => elem.style.height = '0');
+  const titleElems = accordion.querySelectorAll('.menu__title');
+  Array.from(titleElems).forEach(elem => {
+    elem.classList.remove('menu__title--accord-select');
+    elem.closest('.menu__content').classList.remove('menu__content--active');
+  });
 }
 
-function showContent(content) {
-  content.style.height = `${content.scrollHeight}px`;
-}
+accordion.addEventListener('click', accordionHandler);

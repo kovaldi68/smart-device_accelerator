@@ -1,0 +1,91 @@
+.about-company {
+  position: relative;
+  padding-left: 177px;
+  color: $grey-main;
+
+  h2 {
+    margin: 0;
+    margin-bottom: 18px;
+    font-family: $roboto-font;
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 51px;
+  }
+
+  span {
+    display: block;
+    margin-bottom: 22px;
+  }
+
+  p {
+    margin: 0;
+    margin-bottom: 40px;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -25px;
+    width: 210px;
+    height: 100%;
+    background-image: url('../img/year-desktop.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 210px 100%;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url('../img/year-desktop@2x.png');
+    }
+  }
+}
+
+@media (max-width: $tablet-width-max) {
+  .about-company {
+    padding-left: 195px;
+
+    h2 {
+      margin-bottom: 24px;
+      font-size: 32px;
+      line-height: 45px;
+    }
+
+    p {
+      margin-bottom: 34px;
+    }
+
+    &::before {
+      width: 244px;
+      background-image: url('../img/year-tablet.png');
+      background-size: 244px 100%;
+
+      @media (min-resolution: 2dppx) {
+        background-image: url('../img/year-tablet@2x.png');
+      }
+    }
+  }
+}
+
+@media (max-width: $mobile-width-max) {
+  .about-company {
+    padding-left: 0;
+
+    h2 {
+      margin-bottom: 19px;
+      font-size:  28px;
+      line-height: 39px;
+    }
+
+    span {
+      margin-bottom: 25px;
+    }
+
+    p {
+      margin-bottom: 30px;
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+}
