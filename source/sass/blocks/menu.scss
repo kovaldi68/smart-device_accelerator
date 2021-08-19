@@ -25,14 +25,41 @@
 
 @media (max-width: $tablet-width-max) {
   .menu {
+    position: relative;
+    padding-top: 38px;
+    padding-bottom: 33px;
     grid-template-columns: 50% 50%;
     column-gap: 20px;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      left: -25px;
+      width: 100vw;
+      height: 1px;
+      background-color: $grey-dark-decor-opacity-20;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
   }
 }
 
 @media (max-width: $mobile-width-max) {
   .menu {
+    position: static;
     display: block;
+
+    &::before,
+    &::after {
+      display: none;
+    }
   }
 
   .menu__content {

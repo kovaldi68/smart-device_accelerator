@@ -10,6 +10,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+  max-width: 1555px;
 }
 
 .page-header__logo {
@@ -25,6 +26,10 @@
     padding-top: 20px;
   }
 
+  .page-header__container {
+    max-width: 1073px;
+  }
+
   .page-header__button {
     display: none;
   }
@@ -33,5 +38,9 @@
 @media (max-width: $mobile-width-max) {
   .page-header {
     padding-top: 17px;
+  }
+
+  .page-header__container {
+    max-width: 797px;
   }
 }

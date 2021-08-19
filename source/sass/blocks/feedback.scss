@@ -1,0 +1,17 @@
+.feedback {
+  padding-top: 96px;
+  padding-bottom: 113px;
+  background-color: $blue-main;
+  background-image: url();
+}
+
+.feedback__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 30px;
+}
+
+.feedback__form {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}

@@ -117,6 +117,91 @@
         </div>
       </div>
     </section>
+    <section class="page-main__services services">
+      <div class="services__container container">
+        <h2>Service Device предлагает следующие товары и услуги</h2>
+        <ul class="services__list">
+          <li class="services__item">
+            <a class="services__link" href="#">
+              <div class="services__photo">
+                <picture>
+                  <!-- <source type='image/webp' media='(max-width: 767px)' srcset=''>
+                  <source type='image/webp' media='(max-width: 1023px)' srcset=''> -->
+
+                  <!-- 1x: ; 2x:  -->
+                  <source media="(max-width: 767px)" srcset="img/production-mobile.jpg 1x, img/production-mobile@2x.jpg 2x">
+                  <!-- 1x: ; 2x:  -->
+                  <source media="(max-width: 1023px)" srcset="img/production-tablet.jpg 1x, img/production-tablet@2x.jpg 2x">
+                  <img src="img/production-desktop.jpg" alt="Черно-белое изображение печатной платы" srcset="img/production-desktop@2x.jpg" width="370" height="620">
+                </picture>
+              </div>
+              <h3>Производство печатных плат</h3>
+              <div class="services__button" href="#"></div>
+            </a>
+          </li>
+          <li class="services__item">
+            <a class="services__link" href="#">
+              <div class="services__photo">
+                <picture>
+                  <!-- <source type='image/webp' media='(max-width: 767px)' srcset=''>
+                  <source type='image/webp' media='(max-width: 1023px)' srcset=''> -->
+
+                  <!-- 1x: ; 2x:  -->
+                  <source media="(max-width: 767px)" srcset="img/montage-mobile.jpg 1x, img/montage-mobile@2x.jpg 2x">
+                  <!-- 1x: ; 2x:  -->
+                  <source media="(max-width: 1023px)" srcset="img/montage-tablet.jpg 1x, img/montage-tablet@2x.jpg 2x">
+                  <img src="img/montage-desktop.jpg" alt="Черно-белое изображение печатной платы и спец инструмента" srcset="img/montage-desktop@2x.jpg" width="370" height="620">
+                </picture>
+              </div>
+              <h3>Монтаж печатных плат</h3>
+              <div class="services__button" href="#"></div>
+            </a>
+          </li>
+          <li class="services__item">
+            <a class="services__link" href="#">
+              <div class="services__photo">
+                <picture>
+                  <!-- <source type='image/webp' media='(max-width: 767px)' srcset=''>
+                  <source type='image/webp' media='(max-width: 1023px)' srcset=''> -->
+
+                  <!-- 1x: ; 2x:  -->
+                  <source media="(max-width: 767px)" srcset="img/components-mobile.jpg 1x, img/components-mobile@2x.jpg 2x">
+                  <!-- 1x: ; 2x:  -->
+                  <source media="(max-width: 1023px)" srcset="img/components-tablet.jpg 1x, img/components-tablet@2x.jpg 2x">
+                  <img src="img/components-desktop.jpg" alt="Черно-белое изображение световой ленты" srcset="img/components-desktop@2x.jpg" width="370" height="620">
+                </picture>
+              </div>
+              <h3>Комплектующие для светотехники</h3>
+              <div class="services__button" href="#"></div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="page-main__feedback feedback">
+      <div class="feedback__container container">
+        <form class="feedback__form form form--question" action="https://echo.htmlacademy.ru" method="post">
+          <div class="form__wrapper">
+            <h3 class="form__title">Остались вопросы? Задайте их нам!</h3>
+            <p class="form__description">Мы проконсультируем Вас бесплатно</p>
+            <div class="form__input-wrapper form__input-wrapper--name">
+              <input class="form__input form__input--name" type="text" name="user-name" id="question-user-name" placeholder="Имя">
+              <label class="form__label form__label--name" for="question-user-name"></label>
+            </div>
+            <div class="form__input-wrapper form__input-wrapper--tel">
+              <input class="form__input form__input--tel" type="tel" name="user-tel" id="question-user-tel" placeholder="Телефон">
+              <label class="form__label form__label--tel" for="question-user-tel"></label>
+            </div>
+            <textarea class="form__user-text" name="user-text" placeholder="Ваш вопрос"></textarea>
+            <div class="form__input wrapper form__input-wrapper--agree">
+              <input class="form__input form__input--agree" type="checkbox" name="user-check" id="question-user-checkbox">
+              <label class="form__label form__label--agree" for="question-user-checkbox"></label>
+            </div>
+            <button class="form__button button button--form" type="submit" aria-label="Отправить форму с данными для обратного звонка">Задать вопрос</button>
+          </div>
+        </form>
+      </div>
+    </section>
   </main>
   <footer class="page-footer">
     <div class="page-footer__container container">

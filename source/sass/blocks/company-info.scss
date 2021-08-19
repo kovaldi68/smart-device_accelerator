@@ -1,10 +1,14 @@
 .company-info {
   padding-top: 109px;
   padding-bottom: 96px;
-  background-image: url('../img/triangle-big.png');
+  background-image: url('../img/triangle-big.png'), url('../img/triangle-small.png'), url('../img/triangle-small-right.png'), url('../img/triangle-big-right.png');
   background-repeat: no-repeat;
-  background-position: 100px 200px;
-  background-size: 636px 636px;
+  background-position: left -50px top 445px, left 200px top 50px, right 25px top 360px, left 500px top 100px;
+  background-size: 700px 790px, 336px 324px, 336px 324px, 873px 873px;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url('../img/triangle-big@2x.png'), url('../img/triangle-small@2x.png'), url('../img/triangle-small-right@2x.png'), url('../img/triangle-big-right@2x.png');
+  }
 }
 
 .company-info__container {
@@ -15,6 +19,18 @@
   .company-info {
     padding-top: 54px;
     padding-bottom: 75px;
+    background-image: url('../img/triangle-big-right.png');
+    background-repeat: no-repeat;
+    background-position: right -323px top 120px;
+    background-size: 873px 873px;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url('../img/triangle-big-right@2x.png');
+    }
+  }
+
+  .company-info__container {
+    max-width: 1073px;
   }
 }
 
@@ -22,5 +38,10 @@
   .company-info {
     padding-top: 37px;
     padding-bottom: 65px;
+    background-position: right -435px bottom 365px;
+  }
+
+  .company-info__container {
+    max-width: 797px;
   }
 }

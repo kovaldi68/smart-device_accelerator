@@ -14,6 +14,7 @@
   margin: $main-offset / 2;
   padding: 40px 42px;
   width: calc(100% / 2 - #{$main-offset});
+  background-color: $white-basic;
   border: 1px solid $grey-borders;
 
   h3 {
