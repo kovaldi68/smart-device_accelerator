@@ -13,6 +13,7 @@ $roboto-font: 'Roboto Condensed', 'Verdana', sans-serif;
 // black&white
 
 $white-basic: #ffffff;
+$white-basic-opacity-10: rgba($white-basic, 0.1);
 $white-basic-opacity-50: rgba($white-basic, 0.5);
 $white-basic-opacity-80: rgba($white-basic, 0.8);
 $black-decor: #1b2d37;

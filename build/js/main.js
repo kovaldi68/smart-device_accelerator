@@ -22,6 +22,28 @@ function hideAll() {
 
 accordion.addEventListener('click', accordionHandler);
 
+const callbackModal = document.querySelector('.modal--callback');
+const modalCloseButton = document.querySelector('.button--close');
+const orderCallbackButton = document.querySelector('.button--call-back');
+const body = document.querySelector('.page-body');
+const tabletMedia = window.matchMedia('(max-width: 1023px)');
+
+const modalHandler = function() {
+  callbackModal.classList.add('modal--opened');
+  body.classList.add('page-body--modal-opened');
+}
+
+orderCallbackButton.addEventListener('click', modalHandler);
+
+const matchTabletMedia = function() {
+  if (tabletMedia.matches) {
+    callbackModal.classList.remove('modal--opened');
+    body.classList.remove('page-body--modal-opened');
+  }
+}
+
+window.addEventListener('resize', matchTabletMedia);
+
 // (() => {
 //     const anchors = document.querySelectorAll('a[href*="#"]');
 

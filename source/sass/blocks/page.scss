@@ -5,6 +5,7 @@
   font-style: normal;
   font-size: 16px;
   line-height: 22px;
+  overflow-x: hidden;
 }
 
 .page-body {
@@ -17,7 +18,7 @@
   min-width: 320px;
   min-height: 100%;
 
-  &--menu-opened {
-    overflow-y: hidden;
+  &--modal-opened {
+    overflow: hidden;
   }
 }

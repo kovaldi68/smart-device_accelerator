@@ -41,6 +41,41 @@
     background-color: $white-basic;
     border: 1px solid $blue-main;
   }
+
+  &--form {
+    padding: 14px 18px;
+    width: 50%;
+    border: 1px solid $white-basic;
+    letter-spacing: 0.05em;
+  }
+
+  &--close {
+    position: absolute;
+    padding: 0;
+    top: 20px;
+    right: 20px;
+    width: 23px;
+    height: 23px;
+    border-radius: 0;
+    background-color: transparent;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background-color: $white-basic;
+    }
+
+    &::before {
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      transform: rotate(45deg);
+    }
+  }
 }
 
 @media (max-width: $tablet-width-max) {
@@ -49,6 +84,11 @@
       padding-left: 14px;
       padding-right: 14px;
       min-width: 379px;
+    }
+
+    &--form {
+      padding: 14px 19px;
+      min-width: 280px;
     }
   }
 }

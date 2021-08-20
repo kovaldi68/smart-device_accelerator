@@ -1,7 +1,8 @@
 // (() => {
-//     const submitButton = document.querySelector('.button--submit');
-//     const nameInput = document.querySelector('.form__input--name');
-//     const phoneInput = document.querySelector('.form__input--phone');
+//   const submitButton = document.querySelectorAll('button--form');
+//   const userName = document.querySelectorAll('[name = user-name]');
+//   const userPhoneNumber = document.querySelectorAll('[name = user-tel]');
+//   const userText = document.querySelectorAll('[name = user-text]');
 
 //     const onSubmitButtonHandler = function() {
 //       if (isStorageSupport) {
@@ -13,16 +14,18 @@
 //     let isStorageSupport = true;
 //     let storageName = '';
 //     let storagePhone = '';
+//     let storageText = '';
 
 //     try {
 //       storageName = localStorage.getItem('userName');
 //       storagePhone = localStorage.getItem('userPhone');
+//       storageText = localStorage.getItem('userText');
 //     } catch (err) {
 //       isStorageSupport = false;
 //     }
 
 //     const localStorage = function() {
-//       if (storageName && storagePhone) {
+//       if (storageName && storagePhone && storageText) {
 //         nameInput.value = storageName;
 //         phoneInput.value = storagePhone;
 //       }
