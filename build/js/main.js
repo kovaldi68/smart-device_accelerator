@@ -22,6 +22,25 @@ function hideAll() {
 
 accordion.addEventListener('click', accordionHandler);
 
+const anchors = document.querySelectorAll('a[href*="#"]');
+
+const smoothScrolling = function() {
+    for (let anchor of anchors) {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault()
+
+        const blockID = anchor.getAttribute('href').substr(1);
+
+        document.getElementById(blockID).scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      })
+    }
+};
+
+smoothScrolling();
+
 const callbackModal = document.querySelector('.modal--callback');
 const modalCloseButton = document.querySelector('.button--close');
 const orderCallbackButton = document.querySelector('.button--call-back');
@@ -29,8 +48,8 @@ const body = document.querySelector('.page-body');
 const tabletMedia = window.matchMedia('(max-width: 1023px)');
 
 const modalHandler = function() {
-  callbackModal.classList.add('modal--opened');
   body.classList.add('page-body--modal-opened');
+  showUpCallbackModal();
 }
 
 orderCallbackButton.addEventListener('click', modalHandler);
@@ -42,94 +61,133 @@ const matchTabletMedia = function() {
   }
 }
 
+const orderCallbackModalHandler = () => {
+  callbackModal.classList.remove('modal--opened');
+  body.classList.remove('page-body--modal-opened');
+
+  document.removeEventListener('keydown', onEscHandler);
+  document.removeEventListener('click', onClickHandler);
+}
+
+const isEscEvent = (evt) => {
+  return evt.key === ('Escape' || 'Esc');
+};
+
+const showUpCallbackModal = () => {
+  callbackModal.classList.add('modal--opened');
+  callBackUserName.focus();
+  if (storageName && storagePhone && storageText) {
+    callBackUserName.value = storageName;
+    callBackUserPhoneNumber.value = storagePhone;
+    callBackUserText.value = storageText;
+  }
+
+  document.addEventListener('keydown', onEscHandler);
+  document.addEventListener('click', onClickHandler);
+}
+
+const closeModalButtonHandler = () => {
+  callbackModal.classList.remove('modal--opened');
+}
+
+const onEscHandler = (evt) => {
+  if (isEscEvent(evt)) {
+    evt.preventDefault();
+    orderCallbackModalHandler();
+  }
+}
+
+const onClickHandler = (evt) => {
+  if (evt.target === document.querySelector('.modal--callback')) {
+    orderCallbackModalHandler();
+  }
+}
+
+modalCloseButton.addEventListener('click', closeModalButtonHandler);
 window.addEventListener('resize', matchTabletMedia);
 
-// (() => {
-//     const anchors = document.querySelectorAll('a[href*="#"]');
-
-//     const smoothScrolling = function() {
-//         for (let anchor of anchors) {
-//           anchor.addEventListener('click', function (e) {
-//             e.preventDefault()
-
-//             const blockID = anchor.getAttribute('href').substr(1);
-
-//             document.getElementById(blockID).scrollIntoView({
-//               behavior: 'smooth',
-//               block: 'start'
-//             });
-//           })
-//         }
-//     };
-
-//     smoothScrolling();
-// })();
-
-// (() => {
-//   const pageHeader = document.querySelector('.page-header');
-//   const menuToggle = document.querySelector('.page-header__toggle');
-//   const mediaDesktop = window.matchMedia('(min-width: 1024px)');
-//   const body = document.body;
-
-//   pageHeader.classList.remove('page-header--nojs');
-
-//   const onMenuHandler = (evt) => {
-//     evt.preventDefault();
-//     const headerHeight = pageHeader.offsetHeight;
-
-//     if (pageHeader.classList.contains('page-header--opened')) {
-//       pageHeader.classList.remove('page-header--opened')
-//       body.classList.remove('page-body--menu-opened')
-//       body.style.paddingTop = 0;
-//     } else {
-//       pageHeader.classList.add('page-header--opened')
-//       body.classList.add('page-body--menu-opened')
-//       body.style.paddingTop = `${headerHeight}px`;
-//     }
-//   };
-
-//   const closeHeader = () => {
-//     if (mediaDesktop.matches) {
-//       body.style.paddingTop = 0;
-//       pageHeader.classList.remove('page-header--opened');
-//       body.classList.remove('page-body--menu-opened')
-//     }
-//   };
-
-//   menuToggle.addEventListener('click', onMenuHandler);
-//   window.addEventListener('resize', closeHeader);
-// })();
 
 
-// (() => {
-//     const submitButton = document.querySelector('.button--submit');
-//     const nameInput = document.querySelector('.form__input--name');
-//     const phoneInput = document.querySelector('.form__input--phone');
+const questionForm = document.querySelector('.form--question');
+const userName = questionForm.querySelector('[name = user-name]');
+const userPhoneNumber = questionForm.querySelector('[name = user-tel]');
+const userText = questionForm.querySelector('[name = user-text]');
+const callBackForm = document.querySelector('.form--callback');
+const callBackUserName = callBackForm.querySelector('[name = user-name]');
+const callBackUserPhoneNumber = callBackForm.querySelector('[name = user-tel]');
+const callBackUserText = callBackForm.querySelector('[name = user-text]');
+const submitButtons = document.querySelectorAll('.button--form');
 
-//     const onSubmitButtonHandler = function() {
-//       if (isStorageSupport) {
-//         localStorage.setItem('userName', nameInput.value);
-//         localStorage.setItem('userPhone', phoneInput.value);
-//       }
-//     };
+let isStorageSupport = true;
+let storageName = '';
+let storagePhone = '';
+let storageText = '';
 
-//     let isStorageSupport = true;
-//     let storageName = '';
-//     let storagePhone = '';
+try {
+  storageName = localStorage.getItem('userName');
+  storagePhone = localStorage.getItem('userPhone');
+  storageText = localStorage.getItem('userText');
+} catch (err) {
+  isStorageSupport = false;
+}
 
-//     try {
-//       storageName = localStorage.getItem('userName');
-//       storagePhone = localStorage.getItem('userPhone');
-//     } catch (err) {
-//       isStorageSupport = false;
-//     }
+const storageData = function() {
+  if (storageName && storagePhone && storageText) {
+    userName.value = storageName;
+    userPhoneNumber.value = storagePhone;
+    userText.value = storageText;
+  }
+};
 
-//     const localStorage = function() {
-//       if (storageName && storagePhone) {
-//         nameInput.value = storageName;
-//         phoneInput.value = storagePhone;
-//       }
-//     };
+const onSubmitButtonHandler = function(evt) {
+  evt.preventDefault();
+  const form = evt.target.closest('form');
+  const formUserName = form.querySelector('[name = user-name]');
+  const formUserPhoneNumber = form.querySelector('[name = user-tel]');
+  const formUserText = form.querySelector('[name = user-text]');
 
-//     submitButton.addEventListener('click', onSubmitButtonHandler);
-// })();
+  if (isStorageSupport) {
+    localStorage.setItem('userName', formUserName.value);
+    localStorage.setItem('userPhone', formUserPhoneNumber.value);
+    localStorage.setItem('userText', formUserText.value);
+  }
+};
+
+storageData();
+Array.from(submitButtons).forEach(element => element.addEventListener('click', onSubmitButtonHandler));
+
+window.addEventListener("DOMContentLoaded", function() {
+  [].forEach.call( document.querySelectorAll('.form__input--tel'), function(input) {
+    var keyCode;
+    function mask(event) {
+        event.keyCode && (keyCode = event.keyCode);
+        var pos = this.selectionStart;
+        if (pos < 3) event.preventDefault();
+        var matrix = "+7 ( ___ ) ___ ____",
+            i = 0,
+            def = matrix.replace(/\D/g, ""),
+            val = this.value.replace(/\D/g, ""),
+            new_value = matrix.replace(/[_\d]/g, function(a) {
+                return i < val.length ? val.charAt(i++) || def.charAt(i) : a
+            });
+        i = new_value.indexOf("_");
+        if (i != -1) {
+            i < 5 && (i = 3);
+            new_value = new_value.slice(0, i)
+        }
+        var reg = matrix.substr(0, this.value.length).replace(/_+/g,
+            function(a) {
+                return "\\d{1," + a.length + "}"
+            }).replace(/[+()]/g, "\\$&");
+        reg = new RegExp("^" + reg + "$");
+        if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) this.value = new_value;
+        if (event.type == "blur" && this.value.length < 7)  this.value = ""
+    }
+
+    input.addEventListener("input", mask, false);
+    input.addEventListener("focus", mask, false);
+    input.addEventListener("blur", mask, false);
+    input.addEventListener("keydown", mask, false)
+
+  });
+});

@@ -1,35 +1,51 @@
-// (() => {
-//   const submitButton = document.querySelectorAll('button--form');
-//   const userName = document.querySelectorAll('[name = user-name]');
-//   const userPhoneNumber = document.querySelectorAll('[name = user-tel]');
-//   const userText = document.querySelectorAll('[name = user-text]');
+(() => {
+  const questionForm = document.querySelector('.form--question');
+  const userName = questionForm.querySelector('[name = user-name]');
+  const userPhoneNumber = questionForm.querySelector('[name = user-tel]');
+  const userText = questionForm.querySelector('[name = user-text]');
 
-//     const onSubmitButtonHandler = function() {
-//       if (isStorageSupport) {
-//         localStorage.setItem('userName', nameInput.value);
-//         localStorage.setItem('userPhone', phoneInput.value);
-//       }
-//     };
+  const callBackForm = document.querySelector('.form--callback');
+  const callBackUserName = callBackForm.querySelector('[name = user-name]');
+  const callBackUserPhoneNumber = callBackForm.querySelector('[name = user-tel]');
+  const callBackUserText = callBackForm.querySelector('[name = user-text]');
 
-//     let isStorageSupport = true;
-//     let storageName = '';
-//     let storagePhone = '';
-//     let storageText = '';
+  const submitButtons = document.querySelectorAll('.button--form');
 
-//     try {
-//       storageName = localStorage.getItem('userName');
-//       storagePhone = localStorage.getItem('userPhone');
-//       storageText = localStorage.getItem('userText');
-//     } catch (err) {
-//       isStorageSupport = false;
-//     }
+  let isStorageSupport = true;
+  let storageName = '';
+  let storagePhone = '';
+  let storageText = '';
 
-//     const localStorage = function() {
-//       if (storageName && storagePhone && storageText) {
-//         nameInput.value = storageName;
-//         phoneInput.value = storagePhone;
-//       }
-//     };
+  try {
+    storageName = localStorage.getItem('userName');
+    storagePhone = localStorage.getItem('userPhone');
+    storageText = localStorage.getItem('userText');
+  } catch (err) {
+    isStorageSupport = false;
+  }
 
-//     submitButton.addEventListener('click', onSubmitButtonHandler);
-// })();
+  const storageData = function() {
+    if (storageName && storagePhone && storageText) {
+      userName.value = storageName;
+      userPhoneNumber.value = storagePhone;
+      userText.value = storageText;
+    }
+  };
+
+  const onSubmitButtonHandler = function(evt) {
+    evt.preventDefault();
+    const form = evt.target.closest('form');
+    const formUserName = form.querySelector('[name = user-name]');
+    const formUserPhoneNumber = form.querySelector('[name = user-tel]');
+    const formUserText = form.querySelector('[name = user-text]');
+
+    if (isStorageSupport) {
+      localStorage.setItem('userName', formUserName.value);
+      localStorage.setItem('userPhone', formUserPhoneNumber.value);
+      localStorage.setItem('userText', formUserText.value);
+    }
+  };
+
+  storageData();
+  Array.from(submitButtons).forEach(element => element.addEventListener('click', onSubmitButtonHandler));
+})();

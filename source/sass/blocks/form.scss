@@ -79,9 +79,14 @@
     border: none;
     color: $white-basic;
     background-color: $white-basic-opacity-10;
+    outline: none;
 
     &::placeholder {
       color: $white-basic;
+    }
+
+    &:focus {
+      outline: 2px solid $white-basic;
     }
   }
 
@@ -133,9 +138,14 @@
   border: none;
   background-color: $white-basic-opacity-10;
   resize: none;
+  outline: none;
 
   &::placeholder {
     color: $white-basic;
+  }
+
+  &:focus {
+    outline: 2px solid $white-basic;
   }
 }
 
