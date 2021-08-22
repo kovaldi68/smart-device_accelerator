@@ -1,160 +1,98 @@
-const accordion = document.querySelector('.menu--accordion');
+(() => {
+  const accordion = document.querySelector('.menu--accordion');
 
-function accordionHandler(event) {
-  const eventTarget = event.target;
-  if(!(eventTarget.classList.contains('menu__title'))) return;
-  if (eventTarget.classList.contains('menu__title--accord-select')) {
-    hideAll();
-  } else {
-    hideAll();
-    eventTarget.classList.add('menu__title--accord-select');
-    eventTarget.closest('.menu__content').classList.add('menu__content--active');
-  }
-}
-
-function hideAll() {
-  const titleElems = accordion.querySelectorAll('.menu__title');
-  Array.from(titleElems).forEach(elem => {
-    elem.classList.remove('menu__title--accord-select');
-    elem.closest('.menu__content').classList.remove('menu__content--active');
-  });
-}
-
-accordion.addEventListener('click', accordionHandler);
-
-const anchors = document.querySelectorAll('a[href*="#"]');
-
-const smoothScrolling = function() {
-    for (let anchor of anchors) {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault()
-
-        const blockID = anchor.getAttribute('href').substr(1);
-
-        document.getElementById(blockID).scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      })
+  function accordionHandler(event) {
+    const eventTarget = event.target;
+    if(!(eventTarget.classList.contains('menu__title'))) return;
+    if (eventTarget.classList.contains('menu__title--accord-select')) {
+      hideAll();
+    } else {
+      hideAll();
+      eventTarget.classList.add('menu__title--accord-select');
+      eventTarget.closest('.menu__content').classList.add('menu__content--active');
     }
-};
-
-smoothScrolling();
-
-const callbackModal = document.querySelector('.modal--callback');
-const modalCloseButton = document.querySelector('.button--close');
-const orderCallbackButton = document.querySelector('.button--call-back');
-const body = document.querySelector('.page-body');
-const tabletMedia = window.matchMedia('(max-width: 1023px)');
-
-const modalHandler = function() {
-  body.classList.add('page-body--modal-opened');
-  showUpCallbackModal();
-}
-
-orderCallbackButton.addEventListener('click', modalHandler);
-
-const matchTabletMedia = function() {
-  if (tabletMedia.matches) {
-    callbackModal.classList.remove('modal--opened');
-    body.classList.remove('page-body--modal-opened');
-  }
-}
-
-const orderCallbackModalHandler = () => {
-  callbackModal.classList.remove('modal--opened');
-  body.classList.remove('page-body--modal-opened');
-
-  document.removeEventListener('keydown', onEscHandler);
-  document.removeEventListener('click', onClickHandler);
-}
-
-const isEscEvent = (evt) => {
-  return evt.key === ('Escape' || 'Esc');
-};
-
-const showUpCallbackModal = () => {
-  callbackModal.classList.add('modal--opened');
-  callBackUserName.focus();
-  if (storageName && storagePhone && storageText) {
-    callBackUserName.value = storageName;
-    callBackUserPhoneNumber.value = storagePhone;
-    callBackUserText.value = storageText;
   }
 
-  document.addEventListener('keydown', onEscHandler);
-  document.addEventListener('click', onClickHandler);
-}
+  function hideAll() {
+    const titleElems = accordion.querySelectorAll('.menu__title');
+    Array.from(titleElems).forEach(elem => {
+      elem.classList.remove('menu__title--accord-select');
+      elem.closest('.menu__content').classList.remove('menu__content--active');
+    });
+  }
 
-const closeModalButtonHandler = () => {
-  callbackModal.classList.remove('modal--opened');
-}
+  accordion.addEventListener('click', accordionHandler);
+})();
 
-const onEscHandler = (evt) => {
-  if (isEscEvent(evt)) {
+(() => {
+  const anchors = document.querySelectorAll('a[href*="#"]');
+
+  const smoothScrolling = function() {
+      for (let anchor of anchors) {
+        if (anchor.getAttribute('href').substr(1)) {
+          anchor.addEventListener('click', function (e) {
+            e.preventDefault()
+
+            const blockID = anchor.getAttribute('href').substr(1);
+
+            document.getElementById(blockID).scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+          })
+        }
+      }
+  };
+
+  smoothScrolling();
+})();
+
+(() => {
+  const questionForm = document.querySelector('.form--question');
+  const userName = questionForm.querySelector('[name = user-name]');
+  const userPhoneNumber = questionForm.querySelector('[name = user-tel]');
+  const userText = questionForm.querySelector('[name = user-text]');
+
+  const submitButtons = document.querySelectorAll('.button--form');
+
+  let isStorageSupport = true;
+  let storageName = '';
+  let storagePhone = '';
+  let storageText = '';
+
+  try {
+    storageName = localStorage.getItem('userName');
+    storagePhone = localStorage.getItem('userPhone');
+    storageText = localStorage.getItem('userText');
+  } catch (err) {
+    isStorageSupport = false;
+  }
+
+  const storageData = function() {
+    if (storageName && storagePhone && storageText) {
+      userName.value = storageName;
+      userPhoneNumber.value = storagePhone;
+      userText.value = storageText;
+    }
+  };
+
+  const onSubmitButtonHandler = function(evt) {
     evt.preventDefault();
-    orderCallbackModalHandler();
-  }
-}
+    const form = evt.target.closest('form');
+    const formUserName = form.querySelector('[name = user-name]');
+    const formUserPhoneNumber = form.querySelector('[name = user-tel]');
+    const formUserText = form.querySelector('[name = user-text]');
 
-const onClickHandler = (evt) => {
-  if (evt.target === document.querySelector('.modal--callback')) {
-    orderCallbackModalHandler();
-  }
-}
+    if (isStorageSupport) {
+      localStorage.setItem('userName', formUserName.value);
+      localStorage.setItem('userPhone', formUserPhoneNumber.value);
+      localStorage.setItem('userText', formUserText.value);
+    }
+  };
 
-modalCloseButton.addEventListener('click', closeModalButtonHandler);
-window.addEventListener('resize', matchTabletMedia);
-
-
-
-const questionForm = document.querySelector('.form--question');
-const userName = questionForm.querySelector('[name = user-name]');
-const userPhoneNumber = questionForm.querySelector('[name = user-tel]');
-const userText = questionForm.querySelector('[name = user-text]');
-const callBackForm = document.querySelector('.form--callback');
-const callBackUserName = callBackForm.querySelector('[name = user-name]');
-const callBackUserPhoneNumber = callBackForm.querySelector('[name = user-tel]');
-const callBackUserText = callBackForm.querySelector('[name = user-text]');
-const submitButtons = document.querySelectorAll('.button--form');
-
-let isStorageSupport = true;
-let storageName = '';
-let storagePhone = '';
-let storageText = '';
-
-try {
-  storageName = localStorage.getItem('userName');
-  storagePhone = localStorage.getItem('userPhone');
-  storageText = localStorage.getItem('userText');
-} catch (err) {
-  isStorageSupport = false;
-}
-
-const storageData = function() {
-  if (storageName && storagePhone && storageText) {
-    userName.value = storageName;
-    userPhoneNumber.value = storagePhone;
-    userText.value = storageText;
-  }
-};
-
-const onSubmitButtonHandler = function(evt) {
-  evt.preventDefault();
-  const form = evt.target.closest('form');
-  const formUserName = form.querySelector('[name = user-name]');
-  const formUserPhoneNumber = form.querySelector('[name = user-tel]');
-  const formUserText = form.querySelector('[name = user-text]');
-
-  if (isStorageSupport) {
-    localStorage.setItem('userName', formUserName.value);
-    localStorage.setItem('userPhone', formUserPhoneNumber.value);
-    localStorage.setItem('userText', formUserText.value);
-  }
-};
-
-storageData();
-Array.from(submitButtons).forEach(element => element.addEventListener('click', onSubmitButtonHandler));
+  storageData();
+  Array.from(submitButtons).forEach(element => element.addEventListener('click', onSubmitButtonHandler));
+})();
 
 window.addEventListener("DOMContentLoaded", function() {
   [].forEach.call( document.querySelectorAll('.form__input--tel'), function(input) {
@@ -191,3 +129,82 @@ window.addEventListener("DOMContentLoaded", function() {
 
   });
 });
+
+(() => {
+  const callbackModal = document.querySelector('.modal--callback');
+  const modalCloseButton = document.querySelector('.button--close');
+  const orderCallbackButton = document.querySelector('.button--call-back');
+  const callBackUserName = callbackModal.querySelector('[name = user-name]');
+  const callBackUserPhoneNumber = callbackModal.querySelector('[name = user-tel]');
+  const callBackUserText = callbackModal.querySelector('[name = user-text]');
+  const body = document.querySelector('.page-body');
+  const tabletMedia = window.matchMedia('(max-width: 1023px)');
+
+  let isStorageSupport = true;
+  let storageName = '';
+  let storagePhone = '';
+  let storageText = '';
+
+  const modalHandler = function() {
+    body.classList.add('page-body--modal-opened');
+    showUpCallbackModal();
+  }
+
+  const matchTabletMedia = function() {
+    if (tabletMedia.matches) {
+      callbackModal.classList.remove('modal--opened');
+      body.classList.remove('page-body--modal-opened');
+    }
+  }
+
+  const orderCallbackModalHandler = () => {
+    callbackModal.classList.remove('modal--opened');
+    body.classList.remove('page-body--modal-opened');
+
+    document.removeEventListener('keydown', onEscHandler);
+    document.removeEventListener('click', onClickHandler);
+  }
+
+  const isEscEvent = (evt) => {
+    return evt.key === ('Escape' || 'Esc');
+  };
+
+  const showUpCallbackModal = () => {
+    callbackModal.classList.add('modal--opened');
+    callBackUserName.focus();
+
+    try {
+      storageName = localStorage.getItem('userName');
+      storagePhone = localStorage.getItem('userPhone');
+      storageText = localStorage.getItem('userText');
+    } catch (err) {
+      isStorageSupport = false;
+    }
+
+    if (storageName && storagePhone && storageText) {
+      callBackUserName.value = storageName;
+      callBackUserPhoneNumber.value = storagePhone;
+      callBackUserText.value = storageText;
+    }
+
+    document.addEventListener('keydown', onEscHandler);
+    document.addEventListener('click', onClickHandler);
+  }
+
+  const onEscHandler = (evt) => {
+    if (isEscEvent(evt)) {
+      evt.preventDefault();
+      orderCallbackModalHandler();
+    }
+  }
+
+  const onClickHandler = (evt) => {
+    if (evt.target === document.querySelector('.modal--callback')) {
+      orderCallbackModalHandler();
+    }
+  }
+
+  orderCallbackButton.addEventListener('click', modalHandler);
+  modalCloseButton.addEventListener('click', orderCallbackModalHandler);
+  window.addEventListener('resize', matchTabletMedia);
+})();

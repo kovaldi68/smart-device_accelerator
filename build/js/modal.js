@@ -2,16 +2,8 @@
   const callbackModal = document.querySelector('.modal--callback');
   const modalCloseButton = document.querySelector('.button--close');
   const orderCallbackButton = document.querySelector('.button--call-back');
-  const callBackUserName = callbackModal.querySelector('[name = user-name]');
-  const callBackUserPhoneNumber = callbackModal.querySelector('[name = user-tel]');
-  const callBackUserText = callbackModal.querySelector('[name = user-text]');
   const body = document.querySelector('.page-body');
   const tabletMedia = window.matchMedia('(max-width: 1023px)');
-
-  let isStorageSupport = true;
-  let storageName = '';
-  let storagePhone = '';
-  let storageText = '';
 
   const modalHandler = function() {
     body.classList.add('page-body--modal-opened');
@@ -40,15 +32,6 @@
   const showUpCallbackModal = () => {
     callbackModal.classList.add('modal--opened');
     callBackUserName.focus();
-
-    try {
-      storageName = localStorage.getItem('userName');
-      storagePhone = localStorage.getItem('userPhone');
-      storageText = localStorage.getItem('userText');
-    } catch (err) {
-      isStorageSupport = false;
-    }
-
     if (storageName && storagePhone && storageText) {
       callBackUserName.value = storageName;
       callBackUserPhoneNumber.value = storagePhone;
@@ -57,6 +40,10 @@
 
     document.addEventListener('keydown', onEscHandler);
     document.addEventListener('click', onClickHandler);
+  }
+
+  const closeModalButtonHandler = () => {
+    callbackModal.classList.remove('modal--opened');
   }
 
   const onEscHandler = (evt) => {
@@ -73,6 +60,6 @@
   }
 
   orderCallbackButton.addEventListener('click', modalHandler);
-  modalCloseButton.addEventListener('click', orderCallbackModalHandler);
+  modalCloseButton.addEventListener('click', closeModalButtonHandler);
   window.addEventListener('resize', matchTabletMedia);
 })();
