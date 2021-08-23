@@ -138,12 +138,14 @@
 
 @media (max-width: $mobile-width-max) {
   .services {
-    padding-bottom: 64px;
+    padding-bottom: 34px;
   }
 
   .services__container {
     h2 {
-      margin-bottom: 37px;
+      margin-left: 10px;
+      margin-bottom: 42px;
+      width: 100%;
       font-size: 28px;
       line-height: 39px;
     }
@@ -151,11 +153,17 @@
 
   .services__item {
     margin-bottom: 30px;
+
+    &:nth-child(3n) {
+      h3 {
+        top: 30px;
+      }
+    }
   }
 
   .services__link {
     h3 {
-      width: 50%;
+      width: 55%;
       top: 23px;
       left: 35px;
     }

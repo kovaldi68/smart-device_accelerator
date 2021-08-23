@@ -52,10 +52,10 @@
 
     p {
       margin-bottom: 41px;
-      display: -webkit-box;
-      -webkit-line-clamp: 4;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
+      // display: -webkit-box;
+      // -webkit-line-clamp: 4;
+      // -webkit-box-orient: vertical;
+      // overflow: hidden;
     }
 
     &::before {
@@ -82,11 +82,12 @@
     }
 
     span {
-      margin-bottom: 25px;
+      margin-bottom: 41px;
     }
 
     p {
       margin-bottom: 30px;
+      // -webkit-line-clamp: 8;
     }
 
     &::before {

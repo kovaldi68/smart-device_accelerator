@@ -71,7 +71,7 @@
 }
 
 @media (max-width: $mobile-width-max) {
-  .user-nav {
-    margin-bottom: 0;
+  .user-nav__item {
+    margin-right: 23px;
   }
 }

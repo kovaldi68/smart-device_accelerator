@@ -11,3 +11,11 @@
     color: $black-decor-opacity-50;
   }
 }
+
+@media (max-width: $mobile-width-max) {
+  .contacts__item {
+    &--address {
+      width: 95%;
+    }
+  }
+}
