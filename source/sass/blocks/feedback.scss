@@ -1,10 +1,10 @@
 .feedback {
-  padding-top: 96px;
+  padding-top: 93px;
   padding-bottom: 113px;
   background-color: $blue-main;
   background-image: url('../img/plane-desktop.png');
   background-repeat: no-repeat;
-  background-position: top -100px left -100px;
+  background-position: top -59px left 176px;
   background-size: 1745px 765px;
 
   @media (min-resolution: 2dppx) {
@@ -12,20 +12,20 @@
   }
 }
 
-.feedback__container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  column-gap: 30px;
-}
-
 .feedback__form {
-  grid-column-start: 2;
-  grid-column-end: 3;
+  width: 49%;
+  margin-left: auto;
 }
 
-@media (max-width: 1240px) {
+@media (max-width: 1720px) {
   .feedback {
-    background-position: top -100px left -200px;
+    background-position: top -59px left -200px;
+  }
+}
+
+@media (max-width: 1220px) {
+  .feedback__form {
+    width: 60%;
   }
 }
 
@@ -37,8 +37,11 @@
   }
 
   .feedback__container {
-    display: block;
     padding: 0 90px;
+  }
+
+  .feedback__form {
+    width: 100%;
   }
 }
 

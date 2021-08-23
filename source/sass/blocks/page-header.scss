@@ -3,14 +3,14 @@
   top: 0;
   left: 0;
   right: 0;
-  padding-top: 33px;
+  padding-top: 31px;
 }
 
 .page-header__container {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  max-width: 1555px;
+  max-width: 1475px;
 }
 
 .page-header__logo {
@@ -18,7 +18,7 @@
 }
 
 .page-header__button {
-  margin-left: 38px;
+  margin-left: 52px;
 }
 
 @media (max-width: $tablet-width-max) {
@@ -42,5 +42,12 @@
 
   .page-header__container {
     max-width: 797px;
+  }
+
+  .page-header__logo {
+    img {
+      width: 38px;
+      height: 38px;
+    }
   }
 }

@@ -2,14 +2,36 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
-  padding-top: 14px;
+  padding-top: 18px;
   padding-bottom: 14px;
   font-size: 13px;
   line-height: 24px;
   letter-spacing: 0.04em;
   color: $black-decor-opacity-50;
   text-transform: uppercase;
+}
+
+.legal-info__item {
+  a {
+    color: $black-decor-opacity-50;
+
+    &:hover,
+    &:focus {
+      color: $grey-dark-decor;
+    }
+  }
+
+  &--rights {
+    margin-right: 74px;
+  }
+
+  &--absolute {
+    margin-right: 142px;
+  }
+
+  &--developed-by {
+    margin-left: auto;
+  }
 }
 
 @media (max-width: $tablet-width-max) {
@@ -21,6 +43,7 @@
   .legal-info__item {
     &--absolute {
       position: absolute;
+      margin-right: 0;
       top: 17px;
       left: 45%;
     }

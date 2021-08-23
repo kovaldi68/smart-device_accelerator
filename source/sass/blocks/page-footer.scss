@@ -7,7 +7,7 @@
     content: '';
     position: absolute;
     left: 0;
-    bottom: 15%;
+    bottom: 16%;
     width: 100%;
     height: 1px;
     background-color: $grey-dark-decor-opacity-20;
@@ -16,9 +16,9 @@
 
 .page-footer__container {
   display: grid;
-  grid-template-columns: 30% 70%;
+  grid-template-columns: 29% 70%;
   column-gap: 10px;
-  max-width: 1555px;
+  max-width: 1475px;
 }
 
 .page-footer__logo {
@@ -33,6 +33,7 @@
   grid-row-end: 3;
   grid-column-start: 1;
   grid-column-end: 2;
+  margin-top: -8px;
 }
 
 .page-footer__menu {
@@ -80,6 +81,7 @@
     grid-row-end: 2;
     grid-column-start: 2;
     grid-column-end: 3;
+    margin-top: 0;
     margin-bottom: 26px;
   }
 

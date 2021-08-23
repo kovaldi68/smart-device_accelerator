@@ -4,8 +4,8 @@ window.addEventListener("DOMContentLoaded", function() {
     function mask(event) {
         event.keyCode && (keyCode = event.keyCode);
         var pos = this.selectionStart;
-        if (pos < 3) event.preventDefault();
-        var matrix = "+7 ( ___ ) ___ ____",
+        if (pos < 4) event.preventDefault();
+        var matrix = "+7 (___) ___ ____",
             i = 0,
             def = matrix.replace(/\D/g, ""),
             val = this.value.replace(/\D/g, ""),
@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded", function() {
             });
         i = new_value.indexOf("_");
         if (i != -1) {
-            i < 5 && (i = 3);
+            i < 5 && (i = 4);
             new_value = new_value.slice(0, i)
         }
         var reg = matrix.substr(0, this.value.length).replace(/_+/g,

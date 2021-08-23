@@ -16,7 +16,7 @@
     <div class="page-header__container container">
       <a class="page-header__logo">
         <picture>
-          <source media="(max-width: 767px)" srcset="img/logo-mobile.png" width="38" height="38">
+          <source media="(max-width: 767px)" srcset="img/logo-mobile.png">
           <img src="img/logo-white.png" alt="Логотип сайта Smart Device" width="202" height="52">
         </picture>
       </a>
@@ -128,15 +128,16 @@
                   <!-- <source type='image/webp' media='(max-width: 767px)' srcset=''>
                   <source type='image/webp' media='(max-width: 1023px)' srcset=''> -->
 
-                  <!-- 1x: ; 2x:  -->
+                  <!-- 1x: 290px; 2x: 580px -->
                   <source media="(max-width: 767px)" srcset="img/production-mobile.jpg 1x, img/production-mobile@2x.jpg 2x">
-                  <!-- 1x: ; 2x:  -->
+                  <!-- 1x: 715px; 2x: 1430px -->
                   <source media="(max-width: 1023px)" srcset="img/production-tablet.jpg 1x, img/production-tablet@2x.jpg 2x">
+                  <!-- 1x: 370px; 2x: 740px -->
                   <img src="img/production-desktop.jpg" alt="Черно-белое изображение печатной платы" srcset="img/production-desktop@2x.jpg" width="370" height="620">
                 </picture>
               </div>
               <h3>Производство печатных плат</h3>
-              <div class="services__button" href="#"></div>
+              <div class="services__button"></div>
             </a>
           </li>
           <li class="services__item">
@@ -146,15 +147,16 @@
                   <!-- <source type='image/webp' media='(max-width: 767px)' srcset=''>
                   <source type='image/webp' media='(max-width: 1023px)' srcset=''> -->
 
-                  <!-- 1x: ; 2x:  -->
+                  <!-- 1x: 290px; 2x: 580px -->
                   <source media="(max-width: 767px)" srcset="img/montage-mobile.jpg 1x, img/montage-mobile@2x.jpg 2x">
-                  <!-- 1x: ; 2x:  -->
+                  <!-- 1x: 715px; 2x: 1430px -->
                   <source media="(max-width: 1023px)" srcset="img/montage-tablet.jpg 1x, img/montage-tablet@2x.jpg 2x">
+                  <!-- 1x: 370px; 2x: 740px -->
                   <img src="img/montage-desktop.jpg" alt="Черно-белое изображение печатной платы и спец инструмента" srcset="img/montage-desktop@2x.jpg" width="370" height="620">
                 </picture>
               </div>
               <h3>Монтаж печатных плат</h3>
-              <div class="services__button" href="#"></div>
+              <div class="services__button"></div>
             </a>
           </li>
           <li class="services__item">
@@ -164,15 +166,16 @@
                   <!-- <source type='image/webp' media='(max-width: 767px)' srcset=''>
                   <source type='image/webp' media='(max-width: 1023px)' srcset=''> -->
 
-                  <!-- 1x: ; 2x:  -->
+                  <!-- 1x: 290px; 2x: 580px -->
                   <source media="(max-width: 767px)" srcset="img/components-mobile.jpg 1x, img/components-mobile@2x.jpg 2x">
-                  <!-- 1x: ; 2x:  -->
+                  <!-- 1x: 715px; 2x: 1430px -->
                   <source media="(max-width: 1023px)" srcset="img/components-tablet.jpg 1x, img/components-tablet@2x.jpg 2x">
+                  <!-- 1x: 370px; 2x: 740px -->
                   <img src="img/components-desktop.jpg" alt="Черно-белое изображение световой ленты" srcset="img/components-desktop@2x.jpg" width="370" height="620">
                 </picture>
               </div>
               <h3>Комплектующие для светотехники</h3>
-              <div class="services__button" href="#"></div>
+              <div class="services__button"></div>
             </a>
           </li>
         </ul>
@@ -189,7 +192,7 @@
               <label class="form__label form__label--name" for="question-user-name"></label>
             </div>
             <div class="form__input-wrapper form__input-wrapper--tel">
-              <input class="form__input form__input--tel" type="tel" name="user-tel" id="question-user-tel" placeholder="Телефон" pattern="\+7 [0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}" title="формат номера +7 999 000 00 00" required="">
+              <input class="form__input form__input--tel" type="tel" name="user-tel" id="question-user-tel" placeholder="Телефон" title="формат номера +7 (999) 000 00 00" required="">
               <label class="form__label form__label--tel" for="question-user-tel"></label>
             </div>
             <textarea class="form__user-text" name="user-text" placeholder="Ваш вопрос"></textarea>
@@ -210,25 +213,31 @@
       </a>
       <ul class="page-footer__socials socials">
         <li class="socials__item">
-          <svg class="socials__icon socials__icon--facebook" width="27" height="27" aria-label="Социальная сеть Фейсбук">
-            <use xlink:href="img/sprite.svg#fb-social-icon">
-            </use>
-          </svg>
-          <span class="visually-hidden">Facebook</span>
+          <a class="socials__link socials__link--facebook" href="#">
+            <svg class="socials__icon socials__icon--facebook" width="27" height="27" aria-label="Социальная сеть Фейсбук">
+              <use xlink:href="img/sprite.svg#fb-social-icon">
+              </use>
+            </svg>
+            <span class="visually-hidden">Facebook</span>
+          </a>
         </li>
         <li class="socials__item">
-          <svg class="socials__icon socials__icon--odnoklass" width="27" height="27" aria-label="Социальная сеть Одноклассники">
-            <use xlink:href="img/sprite.svg#ok-social-icon">
-            </use>
-          </svg>
-          <span class="visually-hidden">Facebook</span>
+          <a class="socials__link socials__link--odnoklass" href="#">
+            <svg class="socials__icon socials__icon--odnoklass" width="27" height="27" aria-label="Социальная сеть Одноклассники">
+              <use xlink:href="img/sprite.svg#ok-social-icon">
+              </use>
+            </svg>
+            <span class="visually-hidden">Facebook</span>
+          </a>
         </li>
         <li class="socials__item">
-          <svg class="socials__icon socials__icon--vkontakte" width="27" height="27" aria-label="Социальная сеть ВКонтакте">
-            <use xlink:href="img/sprite.svg#vk-social-icon">
-            </use>
-          </svg>
-          <span class="visually-hidden">Facebook</span>
+          <a class="socials__link socials__link--vkontakte" href="#">
+            <svg class="socials__icon socials__icon--vkontakte" width="27" height="27" aria-label="Социальная сеть ВКонтакте">
+              <use xlink:href="img/sprite.svg#vk-social-icon">
+              </use>
+            </svg>
+            <span class="visually-hidden">Facebook</span>
+          </a>
         </li>
       </ul>
       <div class="page-footer__menu menu menu--accordion">
@@ -236,15 +245,29 @@
           <h3 class="menu__title">Разделы сайта</h3>
           <div class="menu__tab site-sections">
             <ul class="site-sections__list">
-              <li class="site-sections__item">О компании</li>
-              <li class="site-sections__item">Продукты</li>
-              <li class="site-sections__item">Производство печатных плат</li>
-              <li class="site-sections__item">Монтаж печатных плат</li>
+              <li class="site-sections__item">
+                <a class="site-sections__link" href="#">О компании</a>
+              </li>
+              <li class="site-sections__item">
+                <a class="site-sections__link" href="#">Продукты</a>
+              </li>
+              <li class="site-sections__item">
+                <a class="site-sections__link" href="#">Производство печатных плат</a>
+              </li>
+              <li class="site-sections__item">
+                <a class="site-sections__link" href="#">Монтаж печатных плат</a>
+              </li>
             </ul>
             <ul class="site-sections__list">
-              <li class="site-sections__item">Комплектующие</li>
-              <li class="site-sections__item">Доставка</li>
-              <li class="site-sections__item">Контакты</li>
+              <li class="site-sections__item">
+                <a class="site-sections__link" href="#">Комплектующие</a>
+              </li>
+              <li class="site-sections__item">
+                <a class="site-sections__link" href="#">Доставка</a>
+              </li>
+              <li class="site-sections__item">
+                <a class="site-sections__link" href="#">Контакты</a>
+              </li>
             </ul>
           </div>
         </div>
@@ -254,13 +277,13 @@
             <ul class="contacts__list">
               <li class="contacts__item contacts__item--address">г. Мытищи, Олимпийский проспект, д.10</li>
               <li class="contacts__item contacts__item--tel">
-                <a>+7 (495) 589-40-50</a>
+                <a href="tel:+74955894050">+7 (495) 589-40-50</a>
               </li>
               <li class="contacts__item contacts__item--tel">
-                <a>+7 (925) 003-87-67</a>
+                <a href="tel:+79250038767">+7 (925) 003-87-67</a>
               </li>
               <li class="contacts__item contacts__item--tel">
-                <a>+7 (926) 926-080-79</a>
+                <a href="tel:+792692608079">+7 (926) 926-080-79</a>
               </li>
             </ul>
           </div>
@@ -274,10 +297,11 @@
           <span>1999-2018 SD Service Devices</span>
         </div>
         <div class="legal-info__item legal-info__item--conditions">
-          <a>Условия конфиденциальности</a>
+          <a href="#">Условия конфиденциальн
+            ости</a>
         </div>
         <div class="legal-info__item legal-info__item--developed-by">
-          <span>Developed by wow studio</span>
+          <a href="#">Developed by wow studio</a>
         </div>
       </div>
     </div>
@@ -294,7 +318,7 @@
             <label class="form__label form__label--name" for="callback-user-name"></label>
           </div>
           <div class="form__input-wrapper form__input-wrapper--tel">
-            <input class="form__input form__input--tel" type="tel" name="user-tel" id="callback-user-tel" placeholder="Телефон" pattern="\+7 [0-9]{3} [0-9]{3} [0-9]{2} [0-9]{2}" title="формат номера +7 999 000 00 00" required="">
+            <input class="form__input form__input--tel" type="tel" name="user-tel" id="callback-user-tel" title="формат номера +7 (999) 000 0000" placeholder="Телефон" required="">
             <label class="form__label form__label--tel" for="callback-user-tel"></label>
           </div>
           <textarea class="form__user-text" name="user-text" placeholder="Ваш вопрос"></textarea>

@@ -25,26 +25,26 @@
 })();
 
 (() => {
-  const anchors = document.querySelectorAll('a[href*="#"]');
+    const anchors = document.querySelectorAll('a[href*="#"]');
 
-  const smoothScrolling = function() {
-      for (let anchor of anchors) {
-        if (anchor.getAttribute('href').substr(1)) {
-          anchor.addEventListener('click', function (e) {
-            e.preventDefault()
+    const smoothScrolling = function() {
+        for (let anchor of anchors) {
+          if (anchor.getAttribute('href').substr(1)) {
+            anchor.addEventListener('click', function (e) {
+              e.preventDefault()
 
-            const blockID = anchor.getAttribute('href').substr(1);
+              const blockID = anchor.getAttribute('href').substr(1);
 
-            document.getElementById(blockID).scrollIntoView({
-              behavior: 'smooth',
-              block: 'start'
-            });
-          })
+              document.getElementById(blockID).scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+              });
+            })
+          }
         }
-      }
-  };
+    };
 
-  smoothScrolling();
+    smoothScrolling();
 })();
 
 (() => {
@@ -77,7 +77,6 @@
   };
 
   const onSubmitButtonHandler = function(evt) {
-    evt.preventDefault();
     const form = evt.target.closest('form');
     const formUserName = form.querySelector('[name = user-name]');
     const formUserPhoneNumber = form.querySelector('[name = user-tel]');
@@ -100,8 +99,8 @@ window.addEventListener("DOMContentLoaded", function() {
     function mask(event) {
         event.keyCode && (keyCode = event.keyCode);
         var pos = this.selectionStart;
-        if (pos < 3) event.preventDefault();
-        var matrix = "+7 ( ___ ) ___ ____",
+        if (pos < 4) event.preventDefault();
+        var matrix = "+7 (___) ___ ____",
             i = 0,
             def = matrix.replace(/\D/g, ""),
             val = this.value.replace(/\D/g, ""),
@@ -110,7 +109,7 @@ window.addEventListener("DOMContentLoaded", function() {
             });
         i = new_value.indexOf("_");
         if (i != -1) {
-            i < 5 && (i = 3);
+            i < 5 && (i = 4);
             new_value = new_value.slice(0, i)
         }
         var reg = matrix.substr(0, this.value.length).replace(/_+/g,

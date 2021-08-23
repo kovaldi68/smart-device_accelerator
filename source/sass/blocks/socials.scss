@@ -10,6 +10,17 @@
   &:last-child {
     margin-right: 0;
   }
+
+  &:hover,
+  &:focus {
+    .socials__icon {
+      fill: $blue-main;
+    }
+  }
+}
+
+.socials__icon {
+  fill: $grey-icons;
 }
 
 @media (max-width: $tablet-width-max) {

@@ -3,7 +3,7 @@
   padding-bottom: 278px;
   background-color: $black-decor;
   background-image: url('../img/promo-desktop.jpg');
-  background-position: center;
+  background-position: center right 8px;
   background-repeat: no-repeat;
   background-size: cover;
 
@@ -14,24 +14,25 @@
 
 .promo__container {
   position: relative;
-  max-width: 1555px;
+  max-width: 1480px;
 
   h1 {
     margin: 0;
-    margin-bottom: 31px;
+    margin-bottom: 26px;
     font-family: $roboto-font;
     font-weight: 700;
     font-size: 80px;
     line-height: 94px;
     color: $white-basic;
     text-transform: uppercase;
+    letter-spacing: 0.07em;
   }
 
   p {
     position: relative;
     margin: 0;
-    margin-bottom: 37px;
-    padding-left: 94px;
+    margin-bottom: 44px;
+    padding-left: 97px;
     max-width: 55%;
     font-size: 22px;
     line-height: 34px;

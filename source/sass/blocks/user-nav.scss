@@ -19,6 +19,12 @@
   color: $white-basic;
   align-items: center;
 
+  &:hover {
+    span {
+      color: $white-basic-opacity-50;
+    }
+  }
+
   &--tel {
     .user-nav__icon {
       margin-right: 16px;

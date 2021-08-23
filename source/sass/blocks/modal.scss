@@ -23,10 +23,11 @@
 
 .modal__wrapper {
   position: fixed;
-  top: 50%;
+  top: 44%;
   left: 50%;
-  padding: 33px 39px 36px 39px;
+  padding: 29px 39px 36px 39px;
   width: 25.5%;
+  height: 605px;
   min-width: 490px;
   max-height: 90vh;
   z-index: $z-index-form;
