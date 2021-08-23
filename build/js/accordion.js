@@ -1,5 +1,8 @@
 (() => {
   const accordion = document.querySelector('.menu--accordion');
+  const menuContent = document.querySelectorAll('.menu__content');
+
+  menuContent.forEach(element => element.classList.remove('menu__content--active'));
 
   function accordionHandler(event) {
     const eventTarget = event.target;

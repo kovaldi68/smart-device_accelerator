@@ -1,5 +1,8 @@
 (() => {
   const accordion = document.querySelector('.menu--accordion');
+  const menuContent = document.querySelectorAll('.menu__content');
+
+  menuContent.forEach(element => element.classList.remove('menu__content--active'));
 
   function accordionHandler(event) {
     const eventTarget = event.target;
@@ -139,23 +142,6 @@ window.addEventListener("DOMContentLoaded", function() {
   const body = document.querySelector('.page-body');
   const tabletMedia = window.matchMedia('(max-width: 1023px)');
 
-  const textToCut = document.getElementById('cut-text');
-  const paragraph = textToCut.textContent;
-  const textPosition = textToCut.textContent.indexOf('Дорог');
-  const strLength = 'Дорог'.length;
-  const lastIndex = +(textPosition + strLength);
-
-  const cutText = function() {
-    if (tabletMedia.matches) {
-      textToCut.textContent = `${textToCut.textContent.slice(0, lastIndex)}..`;
-    } else {
-      textToCut.textContent = paragraph;
-    }
-  }
-
-  cutText();
-  window.addEventListener('resize', cutText);
-
   let isStorageSupport = true;
   let storageName = '';
   let storagePhone = '';
@@ -223,4 +209,24 @@ window.addEventListener("DOMContentLoaded", function() {
   orderCallbackButton.addEventListener('click', modalHandler);
   modalCloseButton.addEventListener('click', orderCallbackModalHandler);
   window.addEventListener('resize', matchTabletMedia);
+})();
+
+(() => {
+  const tabletMedia = window.matchMedia('(max-width: 1023px)');
+  const textToCut = document.getElementById('cut-text');
+  const paragraph = textToCut.textContent;
+  const textPosition = textToCut.textContent.indexOf('Дорог');
+  const strLength = 'Дорог'.length;
+  const lastIndex = +(textPosition + strLength);
+
+  const cutText = function() {
+    if (tabletMedia.matches) {
+      textToCut.textContent = `${textToCut.textContent.slice(0, lastIndex)}..`;
+    } else {
+      textToCut.textContent = paragraph;
+    }
+  }
+
+  window.addEventListener('resize', cutText);
+  cutText();
 })();

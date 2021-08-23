@@ -994,8 +994,8 @@ img {
   padding-bottom: 109px;
   background-image: url("../img/triangle-big.png"), url("../img/triangle-small.png"), url("../img/triangle-small-right.png"), url("../img/triangle-big-right.png");
   background-repeat: no-repeat;
-  background-position: left -50px top 445px, left 200px top 50px, right 25px top 360px, left 500px top 100px;
-  background-size: 700px 790px, 336px 324px, 336px 324px, 873px 873px; }
+  background-position: left -65px top 445px,left 200px top 50px,right 25px top 392px,left 581px top 113px;
+  background-size: 698px 867px,340px 306px,345px 327px,808px 913px; }
   @media (min-resolution: 2dppx) {
     .company-info {
       background-image: url("../img/triangle-big@2x.png"), url("../img/triangle-small@2x.png"), url("../img/triangle-small-right@2x.png"), url("../img/triangle-big-right@2x.png"); } }

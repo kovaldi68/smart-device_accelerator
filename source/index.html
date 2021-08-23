@@ -125,9 +125,9 @@
             <a class='services__link' href='#'>
               <div class='services__photo'>
                 <picture>
-                  <!-- <source type='image/webp' media='(max-width: 767px)' srcset=''>
-                  <source type='image/webp' media='(max-width: 1023px)' srcset=''> -->
-
+                  <source type='image/webp' media='(max-width: 767px)' srcset='img/production-mobile.webp 1x, img/production-mobile@2x.webp 2x'>
+                  <source type='image/webp' media='(max-width: 1023px)' srcset='img/production-tablet.webp 1x, img/production-tablet@2x.webp 2x'>
+                  <source type='image/webp' srcset='img/production-desktop.webp 1x, img/production-desktop@2x.webp 2x'>
                   <!-- 1x: 290px; 2x: 580px -->
                   <source media='(max-width: 767px)' srcset='img/production-mobile.jpg 1x, img/production-mobile@2x.jpg 2x'>
                   <!-- 1x: 715px; 2x: 1430px -->
@@ -144,9 +144,9 @@
             <a class='services__link' href='#'>
               <div class='services__photo'>
                 <picture>
-                  <!-- <source type='image/webp' media='(max-width: 767px)' srcset=''>
-                  <source type='image/webp' media='(max-width: 1023px)' srcset=''> -->
-
+                  <source type='image/webp' media='(max-width: 767px)' srcset='img/montage-mobile.webp 1x, img/montage-mobile@2x.webp 2x'>
+                  <source type='image/webp' media='(max-width: 1023px)' srcset='img/montage-tablet.webp 1x, img/montage-tablet@2x.webp 2x'>
+                  <source type='image/webp' srcset='img/montage-desktop.webp 1x, img/montage-desktop@2x.webp 2x'>
                   <!-- 1x: 290px; 2x: 580px -->
                   <source media='(max-width: 767px)' srcset='img/montage-mobile.jpg 1x, img/montage-mobile@2x.jpg 2x'>
                   <!-- 1x: 715px; 2x: 1430px -->
@@ -163,9 +163,9 @@
             <a class='services__link' href='#'>
               <div class='services__photo'>
                 <picture>
-                  <!-- <source type='image/webp' media='(max-width: 767px)' srcset=''>
-                  <source type='image/webp' media='(max-width: 1023px)' srcset=''> -->
-
+                  <source type='image/webp' media='(max-width: 767px)' srcset='img/components-mobile.webp 1x, img/components-mobile@2x.webp 2x'>
+                  <source type='image/webp' media='(max-width: 1023px)' srcset='img/components-tablet.webp 1x, img/components-tablet@2x.webp 2x'>
+                  <source type='image/webp' srcset='img/components-desktop.webp 1x, img/components-desktop@2x.webp 2x'>
                   <!-- 1x: 290px; 2x: 580px -->
                   <source media='(max-width: 767px)' srcset='img/components-mobile.jpg 1x, img/components-mobile@2x.jpg 2x'>
                   <!-- 1x: 715px; 2x: 1430px -->
@@ -198,7 +198,7 @@
             <textarea class='form__user-text' name='user-text' placeholder='Ваш вопрос'></textarea>
             <button class='form__button button button--form' type='submit' aria-label='Отправить форму с данными для обратного звонка'>Задать вопрос</button>
             <div class='form__input-wrapper form__input-wrapper--agree'>
-              <input class='form__input form__input--agree visually-hidden' type='checkbox' name='user-check' id ='question-user-checkbox' required>
+              <input class='form__input form__input--agree visually-hidden' type='checkbox' name='user-check' id ='question-user-checkbox' required checked>
               <label class='form__label form__label--agree' for='question-user-checkbox'>Я согласен на обработку  персональных данных</label>
             </div>
           </div>
@@ -241,7 +241,7 @@
         </li>
       </ul>
       <div class='page-footer__menu menu menu--accordion'>
-        <div class='menu__content'>
+        <div class='menu__content menu__content--active'>
           <h3 class='menu__title'>Разделы сайта</h3>
           <div class='menu__tab site-sections'>
             <ul class='site-sections__list'>
@@ -271,7 +271,7 @@
             </ul>
           </div>
         </div>
-        <div class='menu__content'>
+        <div class='menu__content menu__content--active'>
           <h3 class='menu__title'>Наш офис</h3>
           <div class='menu__tab contacts'>
             <ul class='contacts__list'>
@@ -323,7 +323,7 @@
           <textarea class='form__user-text' name='user-text' placeholder='Ваш вопрос'></textarea>
           <button class='form__button button button--form' type='submit' aria-label='Отправить форму с данными для обратного звонка'>Отправить</button>
           <div class='form__input-wrapper form__input-wrapper--agree'>
-            <input class='form__input form__input--agree visually-hidden' type='checkbox' name='user-check' id ='callback-user-checkbox' required>
+            <input class='form__input form__input--agree visually-hidden' type='checkbox' name='user-check' id ='callback-user-checkbox' required checked>
             <label class='form__label form__label--agree' for='callback-user-checkbox'>Я согласен на обработку  персональных данных</label>
           </div>
         </div>
