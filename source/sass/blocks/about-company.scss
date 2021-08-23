@@ -42,7 +42,7 @@
 
 @media (max-width: $tablet-width-max) {
   .about-company {
-    padding-left: 195px;
+    padding-left: 185px;
 
     h2 {
       margin-bottom: 24px;
@@ -51,10 +51,15 @@
     }
 
     p {
-      margin-bottom: 34px;
+      margin-bottom: 41px;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
     &::before {
+      height: 350px;
       width: 244px;
       background-image: url('../img/year-tablet.png');
       background-size: 244px 100%;

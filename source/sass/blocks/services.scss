@@ -92,12 +92,13 @@
 
 @media (max-width: $tablet-width-max) {
   .services {
-    padding-top: 53px;
-    padding-bottom: 78px;
+    padding-top: 50px;
+    padding-bottom: 34px;
   }
 
   .services__container {
     h2 {
+      width: 85%;
       margin-bottom: 46px;
       font-size: 32px;
       line-height: 45px;
@@ -113,11 +114,17 @@
     margin: 0;
     margin-bottom: 46px;
     width: 100%;
+
+    &:nth-child(3n) {
+      h3 {
+        top: 54px;
+      }
+    }
   }
 
   .services__link {
     h3 {
-      width: 20%;
+      width: 24%;
       top: 43px;
       left: 44px;
     }

@@ -60,7 +60,6 @@
 
   &--form {
     padding: 12px 14px 10px 14px;
-    width: 50%;
     border: 1px solid $white-basic;
     letter-spacing: 0.05em;
 
@@ -109,8 +108,7 @@
 @media (max-width: $tablet-width-max) {
   .button {
     &--feedback {
-      padding-left: 14px;
-      padding-right: 14px;
+      padding: 16px 14px 20px 14px;
       min-width: 379px;
     }
 

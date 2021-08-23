@@ -39,6 +39,10 @@
 }
 
 @media (max-width: $tablet-width-max) {
+  .user-nav {
+    margin-bottom: 10px;
+  }
+
   .user-nav__item {
     margin-right: 33px;
   }
@@ -67,5 +71,7 @@
 }
 
 @media (max-width: $mobile-width-max) {
-
+  .user-nav {
+    margin-bottom: 0;
+  }
 }

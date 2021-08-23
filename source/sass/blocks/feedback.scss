@@ -4,7 +4,7 @@
   background-color: $blue-main;
   background-image: url('../img/plane-desktop.png');
   background-repeat: no-repeat;
-  background-position: top -59px left 100%;
+  background-position: top -59px left 176px;
   background-size: 1745px 765px;
 
   @media (min-resolution: 2dppx) {
@@ -17,7 +17,7 @@
   margin-left: auto;
 }
 
-@media (max-width: 1720px) {
+@media (max-width: 1700px) {
   .feedback {
     background-position: top -59px left 50%;
   }
@@ -31,8 +31,8 @@
 
 @media (max-width: $tablet-width-max) {
   .feedback {
-    padding-top: 83px;
-    padding-bottom: 103px;
+    padding-top: 80px;
+    padding-bottom: 101px;
     background-image: none;
   }
 
