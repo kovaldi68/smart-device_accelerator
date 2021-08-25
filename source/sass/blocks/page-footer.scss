@@ -26,6 +26,13 @@
   grid-row-end: 2;
   grid-column-start: 1;
   grid-column-end: 2;
+  font-size: 0;
+
+  img {
+    &:first-child {
+      margin-right: 16px;
+    }
+  }
 }
 
 .page-footer__socials {

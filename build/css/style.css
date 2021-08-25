@@ -554,7 +554,10 @@ img {
   grid-row-start: 1;
   grid-row-end: 2;
   grid-column-start: 1;
-  grid-column-end: 2; }
+  grid-column-end: 2;
+  font-size: 0; }
+  .page-footer__logo img:first-child {
+    margin-right: 16px; }
 
 .page-footer__socials {
   grid-row-start: 2;
@@ -800,9 +803,8 @@ img {
 
 .promo__anchor-link {
   position: absolute;
-  left: 0;
-  bottom: -93px;
-  display: inline-block;
+  left: -5px;
+  bottom: -102px;
   font-size: 14px;
   line-height: 16px;
   color: rgba(255, 255, 255, 0.5);
@@ -1133,12 +1135,11 @@ img {
     font-weight: 400;
     font-size: 36px;
     line-height: 51px; }
-  .about-company span {
-    display: block;
-    margin-bottom: 22px; }
   .about-company p {
     margin: 0;
     margin-bottom: 40px; }
+    .about-company p:first-child {
+      margin-bottom: 22px; }
   .about-company::before {
     content: '';
     position: absolute;
@@ -1179,10 +1180,10 @@ img {
       margin-bottom: 19px;
       font-size: 28px;
       line-height: 39px; }
-    .about-company span {
-      margin-bottom: 41px; }
     .about-company p {
       margin-bottom: 30px; }
+      .about-company p:first-child {
+        margin-bottom: 41px; }
     .about-company::before {
       display: none; } }
 

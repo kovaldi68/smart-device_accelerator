@@ -12,14 +12,13 @@
     line-height: 51px;
   }
 
-  span {
-    display: block;
-    margin-bottom: 22px;
-  }
-
   p {
     margin: 0;
     margin-bottom: 40px;
+
+    &:first-child {
+      margin-bottom: 22px;
+    }
   }
 
   &::before {
@@ -77,12 +76,12 @@
       line-height: 39px;
     }
 
-    span {
-      margin-bottom: 41px;
-    }
-
     p {
       margin-bottom: 30px;
+
+      &:first-child {
+        margin-bottom: 41px;
+      }
     }
 
     &::before {
