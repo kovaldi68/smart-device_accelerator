@@ -170,7 +170,11 @@
   }
 
   .services__photo {
-    max-height: none;
+    max-height: 450px;
     min-height: 256px;
+
+    img {
+      max-height: 450px;
+    }
   }
 }

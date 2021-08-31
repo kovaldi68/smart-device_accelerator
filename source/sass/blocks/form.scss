@@ -149,6 +149,11 @@
       }
     }
 
+    input:focus + label {
+      outline: 2px solid $white-basic;
+      outline-offset: 4px;
+    }
+
     input:checked + label {
       &::before {
         background-image: url('../img/tick-icon.svg');

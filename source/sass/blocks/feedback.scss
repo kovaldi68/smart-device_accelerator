@@ -4,7 +4,7 @@
   background-color: $blue-main;
   background-image: url('../img/plane-desktop.png');
   background-repeat: no-repeat;
-  background-position: top -59px left 176px;
+  background-position: top -61px left calc(50% + 88px);
   background-size: 1745px 765px;
 
   @media (min-resolution: 2dppx) {

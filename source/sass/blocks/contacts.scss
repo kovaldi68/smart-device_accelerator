@@ -10,6 +10,13 @@
   a {
     color: $black-decor-opacity-50;
   }
+
+  &:hover,
+  &:focus {
+    a {
+      text-decoration: underline;
+    }
+  }
 }
 
 @media (max-width: $mobile-width-max) {
