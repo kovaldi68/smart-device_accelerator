@@ -9,9 +9,13 @@
   letter-spacing: 0.04em;
   color: $black-decor-opacity-50;
   text-transform: uppercase;
+  margin-left: -10px;
+  margin-right: -10px;
 }
 
 .legal-info__item {
+  margin: 0 10px;
+
   a {
     color: $black-decor-opacity-50;
 
@@ -22,15 +26,15 @@
   }
 
   &--rights {
-    margin-right: 5%;
+    flex-grow: 1.1;
   }
 
   &--absolute {
-    margin-right: 10%;
+    flex-grow: 2.1;
   }
 
-  &--developed-by {
-    margin-left: 24%;
+  &--conditions {
+    flex-grow: 6;
   }
 }
 
@@ -38,12 +42,16 @@
   .legal-info {
     padding-top: 21px;
     padding-bottom: 21px;
+    justify-content: space-between;
   }
 
   .legal-info__item {
+
     &--absolute {
       position: absolute;
       margin-right: 0;
+      margin-left: 0;
+      width: 35%;
       top: 17px;
       left: 43%;
     }
@@ -56,25 +64,32 @@
 
 @media (max-width: $mobile-width-max) {
   .legal-info {
-    flex-direction: column;
-    justify-content: center;
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
     padding-top: 28px;
     padding-bottom: 26px;
   }
 
   .legal-info__item {
+    margin-left: 0;
+    margin-right: 0;
     margin-bottom: 21px;
+    text-align: center;
 
     &--absolute {
       min-width: 250px;
-      text-align: center;
       top: 78px;
       left: 50%;
       transform: translateX(-50%);
     }
 
+    &--conditions {
+      width: 100%;
+    }
+
     &--developed-by {
-      margin-left: 0;
+      width: 100%;
     }
 
     &:last-child {

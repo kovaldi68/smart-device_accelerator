@@ -8,7 +8,7 @@
     content: '';
     position: absolute;
     left: 0;
-    bottom: 16%;
+    bottom: 20%;
     width: 100%;
     height: 1px;
     background-color: $grey-dark-decor-opacity-20;
@@ -17,6 +17,7 @@
 
 .page-footer__container {
   display: grid;
+  position: relative;
   grid-template-columns: 29% 70%;
   column-gap: 10px;
   max-width: 1475px;
@@ -37,6 +38,9 @@
 }
 
 .page-footer__socials {
+  position: absolute;
+  top: 49px;
+  left: 0;
   grid-row-start: 2;
   grid-row-end: 3;
   grid-column-start: 1;
@@ -69,7 +73,6 @@
   }
 
   .page-footer__container {
-    position: relative;
     grid-template-columns: 45% 50%;
     column-gap: 40px;
     max-width: 1073px;
@@ -84,6 +87,7 @@
   }
 
   .page-footer__socials {
+    position: static;
     grid-row-start: 1;
     grid-row-end: 2;
     grid-column-start: 2;
