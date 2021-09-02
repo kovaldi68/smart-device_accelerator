@@ -70,6 +70,14 @@
   transform: rotate(-90deg) translateX(-50%);
 }
 
+@media (max-width: 1200px) {
+  .promo__container {
+    h1 {
+      width: 60%;
+    }
+  }
+}
+
 @media (max-width: $tablet-width-max) {
   .promo {
     padding-top: 188px;
@@ -90,7 +98,6 @@
 
     h1 {
       margin-bottom: 29px;
-      width: 65%;
       font-size: 60px;
       line-height: 70px;
       letter-spacing: 0.07em;
@@ -99,7 +106,7 @@
     p {
       margin-bottom: 57px;
       padding-left: 50px;
-      max-width: 70%;
+      max-width: 60%;
       font-size: 18px;
       line-height: 28px;
 

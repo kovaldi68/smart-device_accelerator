@@ -22,7 +22,8 @@
     border: 1px solid $white-basic;
     letter-spacing: 0.05em;
 
-    &:hover {
+    &:hover,
+    &:focus {
       border: 1px solid $white-basic-opacity-50;
       color: $white-basic-opacity-50;
     }
@@ -96,7 +97,8 @@
       transform: rotate(45deg);
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       &::before,
       &::after {
         background-color: $white-basic-opacity-50;
