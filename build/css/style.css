@@ -353,6 +353,8 @@ img {
   border-style: none;
   border-radius: 5px; }
   .button--call-back {
+    align-self: flex-start;
+    margin-top: 6px;
     padding: 14px 10px 13px;
     min-width: 180px;
     background-color: transparent;
@@ -504,7 +506,8 @@ img {
   max-width: 885px; }
 
 .user-nav__item {
-  margin-right: 18%;
+  margin-left: 44px;
+  margin-right: 44px;
   padding-top: 5px;
   padding-bottom: 5px;
   line-height: 18px; }
@@ -532,7 +535,8 @@ img {
     min-width: 83px;
     max-width: 500px; }
   .user-nav__item {
-    margin-right: 33px; }
+    margin-left: 16px;
+    margin-right: 17px; }
   .user-nav__link span {
     display: none; }
   .user-nav__link--tel .user-nav__icon {
@@ -548,7 +552,8 @@ img {
   .user-nav {
     max-width: 215px; }
   .user-nav__item {
-    margin-right: 23px; } }
+    margin-left: 12px;
+    margin-right: 11px; } }
 
 .page-header {
   position: absolute;
@@ -561,7 +566,6 @@ img {
 .page-header__container {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   max-width: 1475px; }
 
 .page-header__user-nav {
